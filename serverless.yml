@@ -1,4 +1,4 @@
-service: slack-new-channel
+service: slack-new-emoji
 
 frameworkVersion: '2'
 

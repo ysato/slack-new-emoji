@@ -12,11 +12,18 @@ const app = new App({
   receiver: expressReceiver
 });
 
-app.event('channel_created', async ({ event, client }) => {
+app.event('emoji_changed', async ({ event, client }) => {
+  let text;
+  if (event.subtype === 'add') {
+    text = `-> \`:${event.name}:\`  :${event.name}:\n${event.value}`;
+  } else {
+    text = `<- \`:${event.names.join(':, :')}:\``;
+  }
+
   try {
     await client.chat.postMessage({
       channel: process.env.CHANNEL_TO_NOTIFY,
-      text: `<#${event.channel.id}>`
+      text: text
     });
   } catch (error) {
     console.log(error);

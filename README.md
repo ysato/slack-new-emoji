@@ -14,16 +14,17 @@ responding to events and interactive buttons.
 # Replace with your signing secret and token
 export SLACK_BOT_TOKEN=<your-bot-token>
 export SLACK_SIGNING_SECRET=<your-signing-secret>
+export CHANNEL_TO_NOTIFY=<your-channel-to-notify>
 ```
 
 ### 2. Setup your local project
 
 ```zsh
 # Clone this project onto your machine
-git clone https://github.com/ysato/slack-new-channel.git
+git clone https://github.com/ysato/slack-new-emoji.git
 
 # Change into the project
-cd slack-new-channel/
+cd slack-new-emoji/
 
 # Install the dependencies
 npm install
